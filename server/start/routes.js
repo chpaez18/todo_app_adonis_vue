@@ -22,6 +22,7 @@ Route.group(()=>{
   Route.post('auth/login','UserController.login');
   Route.post('auth/signup','UserController.signup');
 
-
+  /* PROJECTS */
+  Route.get('projects','ProjectController.index').middleware('auth');
 
 }).prefix('api/v1')
