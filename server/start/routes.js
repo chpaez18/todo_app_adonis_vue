@@ -24,5 +24,6 @@ Route.group(()=>{
 
   /* PROJECTS */
   Route.get('projects','ProjectController.index').middleware('auth');
+  Route.post('projects/store','ProjectController.store').middleware('auth');
 
 }).prefix('api/v1')
