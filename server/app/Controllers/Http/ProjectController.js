@@ -6,6 +6,7 @@ class ProjectController {
 
     async index({ auth }) {
         const user = await auth.getUser();
+        //const projects = await Project.query().paginate(1,10)  de esta forma retornamos con paginador
         return await user.projects().fetch();
     }
 
