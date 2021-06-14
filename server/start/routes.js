@@ -25,6 +25,11 @@ Route.group(()=>{
   /* PROJECTS */
   Route.get('projects','ProjectController.index').middleware('auth');
   Route.post('projects/store','ProjectController.store').middleware('auth');
+  Route.put('projects/update/:id', 'ProjectController.update').middleware('auth');
   Route.delete('projects/delete/:id','ProjectController.destroy').middleware('auth');
+
+  /* TASKS */
+  Route.get('projects/:id/tasks','TaskController.index').middleware('auth'); //obtiene todas las tasks de un proyecto especifico 
+  Route.post('projects/:id/tasks', 'TaskController.store').middleware('auth'); //crear una nueva task, el id corresponde al id del proyecto al cual pertenecera la tarea
 
 }).prefix('api/v1')
