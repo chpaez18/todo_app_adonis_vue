@@ -30,6 +30,32 @@ class TaskController {
         await project.tasks().save(task)
         return task;
     }
+
+    async update ({auth, params, request}) {
+        const user = await auth.getUser();
+        const { id } = params;
+        const task = await Task.find(id);
+        const project = await task.project().fetch(); //traemos el proyecto asociado a la tarea, gracias al belongTo en el model Task
+        AuthorizationService.verifyPermission(project, user);
+
+        task.merge(request.only([
+            'description',
+            'completed'
+        ]));
+        await task.save();
+        return task;
+    }
+
+    async destroy ({auth, params}) {
+        const user = await auth.getUser();
+        const { id } = params;
+        const task = await Task.find(id);
+        const project = await task.project().fetch(); //traemos el proyecto asociado a la tarea, gracias al belongTo en el model Tarea
+        AuthorizationService.verifyPermission(project, user);
+
+        await task.delete();
+        return task;
+    }
 }
 
 module.exports = TaskController
