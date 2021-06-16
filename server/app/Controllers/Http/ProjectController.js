@@ -17,7 +17,7 @@ class ProjectController {
         project.fill({
             title
         });
-
+        // const project = await Project.create({title: project.title, user_id: user.id}) otra forma de guardar
         await user.projects().save(project);
         return project;
     }

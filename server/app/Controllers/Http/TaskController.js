@@ -14,6 +14,11 @@ class TaskController {
         return await project.tasks().fetch();
     }
 
+    async indexTasks ({auth, request}) {
+        const user = await auth.getUser();
+        return await Task.all();
+    }
+
     /* crea un nuevo task, se debe enviar como param el id del proyecto para poderlo asociar al task */
     async store ({auth, request, params}) {
         const user = await auth.getUser();
