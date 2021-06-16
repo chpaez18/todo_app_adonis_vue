@@ -1,13 +1,15 @@
 <template>
 
+<div class="app">
+    <header>
+      <Navbar />
+    </header>
 
-
-  <div class="bg-gray-200 h-full md:h-screen">  
-  <header>
-    <Navbar />
-  </header>
+  <div class="bg-gray-200 h-full md:h-screen pt-20">  
     <router-view/>
   </div>
+
+</div>
 
 </template>
 

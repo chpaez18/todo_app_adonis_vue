@@ -19,22 +19,31 @@
                 </div>
 
                 <div class="hidden md:block">
-                    <button class="px-8 py-3 rounded-md bg-gray-200 mx-2 hover:text-purple-600 transition ease-in-out duration-500 hover:shadow">
-                        <router-link :to="{ name: 'Home' }"> Home </router-link>
-                    </button>
-                    <button class="px-8 py-3 rounded-md bg-gray-200 mx-2 hover:text-purple-600 transition ease-in-out duration-500 hover:shadow">
-                        <router-link :to="{ name: 'Home' }"> Tasks </router-link>
-                    </button>
+                    <router-link :to="{ name: 'Home' }"> 
+                        <button class="px-8 py-3 rounded-md focus:outline-none bg-gray-200 mx-2 hover:text-purple-600 transition ease-in-out duration-500 hover:shadow">
+                            Home 
+                        </button>
+                    </router-link>
+                    <router-link :to="{ name: 'Tasks' }"> 
+                        <button class="px-8 py-3 rounded-md focus:outline-none bg-gray-200 mx-2 hover:text-purple-600 transition ease-in-out duration-500 hover:shadow">
+                            Tasks
+                        </button>
+                    </router-link>
+                    
                 </div>
             </div>
 
                 <div :class="open ? 'block' : 'hidden' ">
-                    <button class="w-full block text-left focus:outline-none hover:bg-gray-200 transition ease-in-out duration-500 px-16 py-3">
-                        <router-link :to="{ name: 'Home' }"> Home </router-link>
-                    </button>
-                    <button class="w-full block text-left focus:outline-none hover:bg-gray-200 transition ease-in-out duration-500 px-16 py-3">
-                        <router-link :to="{ name: 'Home' }"> Tasks </router-link>
-                    </button>
+                    <router-link :to="{ name: 'Home' }"> 
+                        <button class="w-full block text-left focus:outline-none hover:bg-gray-200 transition ease-in-out duration-500 px-16 py-3">
+                            Home 
+                        </button>
+                    </router-link>
+                    <router-link :to="{ name: 'Tasks' }"> 
+                        <button class="w-full block text-left focus:outline-none hover:bg-gray-200 transition ease-in-out duration-500 px-16 py-3">
+                            Tasks 
+                        </button>
+                    </router-link>
                 </div>
 
         </div>
